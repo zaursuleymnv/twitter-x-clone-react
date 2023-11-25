@@ -1,3 +1,6 @@
+import store from "~/store"
+
+
 export const MainMenu = [
     {
         path: '/',
@@ -127,7 +130,9 @@ export const MainMenu = [
         }
     },
     {
-        path: '/profile',
+        path: () => {
+            return `/${store.getState()?.auth?.currentAccount?.username}`
+        },
         title: 'Profile',
         icon: {
             active: (
@@ -144,4 +149,103 @@ export const MainMenu = [
             )
         }
     }
+]
+
+export const topics = [
+    {
+        title: '1 · Football · Trending ',
+        topic: {
+            type: 'tag',
+            value: 'MCILIV'
+        },
+        postCount: 71000,
+    },
+    {
+        title: '2 · Sports · Trending ',
+        topic: {
+            type: 'query',
+            value: 'Xavi'
+        },
+        postCount: 25800,
+    },
+    {
+        title: '1 · Football · Trending ',
+        topic: {
+            type: 'tag',
+            value: 'MCILIV'
+        },
+        postCount: 71000,
+    },
+    {
+        title: '2 · Sports · Trending ',
+        topic: {
+            type: 'query',
+            value: 'Xavi'
+        },
+        postCount: 25800,
+    },
+    {
+        title: '1 · Football · Trending ',
+        topic: {
+            type: 'tag',
+            value: 'MCILIV'
+        },
+        postCount: 71000,
+    },
+    {
+        title: '2 · Sports · Trending ',
+        topic: {
+            type: 'query',
+            value: 'Xavi'
+        },
+        postCount: 25800,
+    },
+    {
+        title: '1 · Football · Trending ',
+        topic: {
+            type: 'tag',
+            value: 'MCILIV'
+        },
+        postCount: 71000,
+    },
+    {
+        title: '2 · Sports · Trending ',
+        topic: {
+            type: 'query',
+            value: 'Xavi'
+        },
+        postCount: 25800,
+    },
+    {
+        title: '1 · Football · Trending ',
+        topic: {
+            type: 'tag',
+            value: 'MCILIV'
+        },
+        postCount: 71000,
+    },
+    {
+        title: '2 · Sports · Trending ',
+        topic: {
+            type: 'query',
+            value: 'Xavi'
+        },
+        postCount: 25800,
+    },
+    {
+        title: '1 · Football · Trending ',
+        topic: {
+            type: 'tag',
+            value: 'MCILIV'
+        },
+        postCount: 71000,
+    },
+    {
+        title: '2 · Sports · Trending ',
+        topic: {
+            type: 'query',
+            value: 'Xavi'
+        },
+        postCount: 25800,
+    },
 ]

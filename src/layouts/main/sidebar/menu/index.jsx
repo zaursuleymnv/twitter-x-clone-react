@@ -4,12 +4,16 @@ import Button from "~/components/button"
 import { MainMenu } from "~/utils/consts"
 import More from "./more"
 import New from "./new"
+import { useAccount } from "~/store/auth/hooks"
 
 export default function Menu() {
+
+    const account = useAccount()
+
     return(
-        <nav className="mt-0.5 mb-1">
+        <nav className="mt-0.5 mb-1" key={account}>
             {MainMenu.map((menu, index) => (
-                <NavLink to={menu.path} className="py-[2px] block group">
+                <NavLink key={index} to={typeof menu.path === 'function' ? menu.path() : menu.path} className="block group">
                 {({isActive}) => (
                     <div className={classNames("inline-flex items-center p-3 rounded-full gap-5 group-hover:bg-[#eff3f41a] transition-colors", {
                         "font-bold": isActive
