@@ -15,12 +15,12 @@ export default function Menu() {
             {MainMenu.map((menu, index) => (
                 <NavLink key={index} to={typeof menu.path === 'function' ? menu.path() : menu.path} className="block group">
                 {({isActive}) => (
-                    <div className={classNames("inline-flex items-center p-3 rounded-full gap-5 group-hover:bg-[#eff3f41a] transition-colors", {
+                    <div className={classNames("text-[color:var(--color-base)] inline-flex items-center p-3 rounded-full gap-5 group-hover:bg-[#eff3f41a] transition-colors", {
                         "font-bold": isActive
                     })}>
                     <div className="w-[26.25] h-[26.25] relative">
                         {menu?.notification && (
-                            <span className="absolute -top-1.5 -right-1 bg-[#1d9bf0] w-[18px] h-[18px] rounded-full flex justify-center items-center text-[11px]">{menu?.notification}</span>
+                            <span className="absolute -top-1.5 -right-1 bg-[color:var(--color-primary)] w-[18px] h-[18px] rounded-full flex justify-center items-center text-[11px]">{menu?.notification}</span>
                         )}
                         {!isActive && menu.icon.passive}
                         {isActive && menu.icon.active}

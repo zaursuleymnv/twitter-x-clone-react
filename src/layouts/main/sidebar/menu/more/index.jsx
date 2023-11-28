@@ -1,16 +1,17 @@
 import { Popover, Disclosure } from "@headlessui/react"
 import classNames from "classnames"
 import { Link } from "react-router-dom"
+import { setModal } from "~/store/modal/actions"
 
 export default function More() {
     return (
         <Popover className='relative'>
             <Popover.Button className="py-[2px] block group outline-none">
-                    <div className="inline-flex items-center p-3 rounded-full gap-5 group-hover:bg-[#eff3f41a] transition-colors">
+                    <div className="text-[color:var(--color-base)] inline-flex items-center p-3 rounded-full gap-5 group-hover:bg-[#eff3f41a] transition-colors">
                     <div className="w-[26.25] h-[26.25] relative">
                         <svg width={26.25} height={26.25} className="block"
                             viewBox="0 0 24 24">
-                            <path fill="#e7e9ea" d="M3.75 12c0-4.56 3.69-8.25 8.25-8.25s8.25 3.69 8.25 8.25-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12zM12 1.75C6.34 1.75 1.75 6.34 1.75 12S6.34 22.25 12 22.25 22.25 17.66 22.25 12 17.66 1.75 12 1.75zm-4.75 11.5c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25S6 11.31 6 12s.56 1.25 1.25 1.25zm9.5 0c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25-1.25.56-1.25 1.25.56 1.25 1.25 1.25zM13.25 12c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25.56-1.25 1.25-1.25 1.25.56 1.25 1.25z"/>
+                            <path fill="currentColor" d="M3.75 12c0-4.56 3.69-8.25 8.25-8.25s8.25 3.69 8.25 8.25-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12zM12 1.75C6.34 1.75 1.75 6.34 1.75 12S6.34 22.25 12 22.25 22.25 17.66 22.25 12 17.66 1.75 12 1.75zm-4.75 11.5c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25S6 11.31 6 12s.56 1.25 1.25 1.25zm9.5 0c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25-1.25.56-1.25 1.25.56 1.25 1.25 1.25zM13.25 12c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25.56-1.25 1.25-1.25 1.25.56 1.25 1.25z"/>
                         </svg>
                     </div>
                     <div className="pr-4 text-xl">
@@ -18,7 +19,7 @@ export default function More() {
                     </div>
                     </div>
             </Popover.Button>
-            <Popover.Panel className="w-[318px] absolute bottom-0 left-0 bg-black rounded-xl shadow-box overflow-hidden">
+            <Popover.Panel className="w-[318px] absolute bottom-0 left-0 bg-[color:var(--background-primary)] rounded-xl shadow-box overflow-hidden">
                 <button className="px-4 w-full h-14 inline-flex items-center gap-5 hover:bg-[#eff3f41a] transition-colors">
                     <div className="w-[26.25] h-[26.25] relative">
                         <svg width={24} height={24} className="block"
@@ -122,13 +123,16 @@ export default function More() {
                                 </svg>
                                 Help Center
                             </Link>
-                            <Link to="/" className="h-11 flex items-center px-3 gap-3 text-[15px] font-medium text-white hover:bg-[#eff3f41a] transition-colors">
+                            <button
+                                onClick={() => setModal('appearance')} 
+                                className="h-11 flex items-center w-full px-3 gap-3 text-[15px] font-medium text-white hover:bg-[#eff3f41a] transition-colors"
+                            >
                                 <svg width={18.75} height={18.75}
                                     viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M20 12h2v6.5c0 1.38-1.12 2.5-2.5 2.5h-15C3.12 21 2 19.88 2 18.5v-13C2 4.12 3.12 3 4.5 3H11v2H4.5c-.28 0-.5.22-.5.5v13c0 .28.22.5.5.5h15c.27 0 .5-.22.5-.5V12zm2.31-6.78l-6.33 7.18c-.2 2.02-1.91 3.6-3.98 3.6H8v-4c0-2.07 1.58-3.78 3.6-3.98l7.18-6.33c.99-.88 2.49-.83 3.43.1.93.94.98 2.44.1 3.43zm-1.52-2.01c-.19-.19-.49-.2-.69-.02l-6.08 5.36c.59.35 1.08.84 1.43 1.43l5.36-6.08c.18-.2.17-.5-.02-.69z"/>
                                 </svg>
                                 Display
-                            </Link>
+                            </button>
                             <Link to="/" className="h-11 flex items-center px-3 gap-3 text-[15px] font-medium text-white hover:bg-[#eff3f41a] transition-colors">
                                 <svg width={18.75} height={18.75}
                                     viewBox="0 0 24 24">
