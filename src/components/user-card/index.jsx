@@ -25,7 +25,7 @@ export default function UserCard({user}) {
                                 </svg>
                             )}
                         </div>
-                        <div className="text-[#71767b] text-[15px]">@{user.username}</div>
+                        <div className="text-[color:var(--color-base-secondary)] text-[15px]">@{user.username}</div>
                     </div>
                     <div>
                         {following ? (

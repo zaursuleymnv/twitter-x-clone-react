@@ -23,7 +23,7 @@ export default function MoreAccount({close}) {
                     <img src={account.avatar} className="w-10 h-10 rounded-full" alt="" />
                     <div className="mx-3 flex-1 text-[15px]">
                         <h6 className="font-bold leading-[20px]">{account.fullname}</h6>
-                        <div className="text-[#71767b]">
+                        <div className="text-[color:var(--color-base-secondary)]">
                             @{account.username}
                         </div>
                     </div>

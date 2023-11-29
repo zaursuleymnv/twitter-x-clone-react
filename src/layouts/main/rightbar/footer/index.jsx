@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 export default function Footer() {
     return (
         <footer className="mb-4 px-4 flex flex-wrap gap-2">
-            <Link to="/" className="text-[#71767b] text-[13px] leading-4 hover:underline">Terms of Service</Link>
-            <Link to="/" className="text-[#71767b] text-[13px] leading-4 hover:underline">Privacy Policy</Link>
-            <Link to="/" className="text-[#71767b] text-[13px] leading-4 hover:underline">Cookie Policy</Link>
-            <Link to="/" className="text-[#71767b] text-[13px] leading-4 hover:underline">Accessibility</Link>
-            <Link to="/" className="text-[#71767b] text-[13px] leading-4 hover:underline">Ads info</Link>
+            <Link to="/" className="text-[color:var(--color-base-secondary)] text-[13px] leading-4 hover:underline">Terms of Service</Link>
+            <Link to="/" className="text-[color:var(--color-base-secondary)] text-[13px] leading-4 hover:underline">Privacy Policy</Link>
+            <Link to="/" className="text-[color:var(--color-base-secondary)] text-[13px] leading-4 hover:underline">Cookie Policy</Link>
+            <Link to="/" className="text-[color:var(--color-base-secondary)] text-[13px] leading-4 hover:underline">Accessibility</Link>
+            <Link to="/" className="text-[color:var(--color-base-secondary)] text-[13px] leading-4 hover:underline">Ads info</Link>
             <Popover className='relative inline-flex leading-4'>
                     <Popover.Button
-                        className="text-[#71767b] text-[13px] leading-4 hover:underline outline-none inline-flex items-center"
+                        className="text-[color:var(--color-base-secondary)] text-[13px] leading-4 hover:underline outline-none inline-flex items-center"
                     >
                         More
                         <svg 
@@ -42,7 +42,7 @@ export default function Footer() {
                         </Link>
                     </Popover.Panel>
             </Popover>
-            <p className="text-[#71767b] text-[13px] leading-4">                    
+            <p className="text-[color:var(--color-base-secondary)] text-[13px] leading-4">                    
                 &copy; 2023 Zaur Suleymanov
             </p>
         </footer>

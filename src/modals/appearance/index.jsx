@@ -1,17 +1,24 @@
+import classNames from "classnames";
 import { Link } from "react-router-dom";
+import Button from "~/components/button";
+import { setBackgroundColor, setBoxShadow, setColor } from "~/store/appearance/actions";
+import { useAppearance } from "~/store/appearance/hooks";
 
-export default function AppearanceModal() {
+export default function AppearanceModal({close}) {
+
+    const {backgroundColor, color} = useAppearance()
+
     return (
         <div className="w-[600px]">
             <h3 className="mt-8 mb-3 text-[23px] font-extrabold leading-7 text-center">
                 Customize your view
             </h3>
             <div className="p-8 pt-0">
-                <p className="text-center text-[15px] text-[#71767b] mb-5 leading-5">
+                <p className="text-center text-[15px] text-[color:var(--color-base-secondary)] mb-5 leading-5">
                     These settings affect all the X accounts on this browser.
                 </p>
                 <div className="mx-8 mb-4">
-                    <div className="flex gap-3 border border-[#2f3336] px-4 py-3 rounded-2xl">
+                    <div className="flex gap-3 border border-[color:var(--background-third)] px-4 py-3 rounded-2xl">
                         <img 
                             src="https://pbs.twimg.com/profile_images/1683899100922511378/5lY42eHs_bigger.jpg"
                             className="w-10 h-10 rounded-full object-cover" 
@@ -32,15 +39,89 @@ export default function AppearanceModal() {
                                         />
                                     </svg>
                                 </div>
-                                <div className="ml-1 flex items-center text-[#71767b]">
+                                <div className="ml-1 flex items-center text-[color:var(--color-base-secondary)]">
                                     @X · 59m
                                 </div>
                             </header>
-                            <div className="text-[15px] leading-5">
+                            <div className="text-[color:var(--color-base)] text-[15px] leading-5">
                                 At the heart of X are short messages called posts — just like this one — which can include photos, videos, links, text, hashtags, and mentions like <Link to="/x" className="text-[#1d9bf0] hover:underline">@X</Link>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <h6 className="text-[color:var(--color-base-secondary)] text-[13px] font-bold leading-5 mb-1">Background</h6>
+                    <div className="py-1 px-3 mb-3 grid gap-1 grid-cols-3 bg-[color:var(--background-secondary)] rounded-2xl">
+                        <button
+                            onClick={() => {
+                                setColor({
+                                    ... color,
+                                    base: '#0f1419',
+                                    baseSecondary: '#536471'
+                                })
+                                setBackgroundColor({
+                                    name: 'light',
+                                    primary: '#fff',
+                                    secondary: '#f7f9f9',
+                                    third: '#eff3f4',
+                                    modal: '#00000066'
+                                })
+                                setBoxShadow('rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px')
+                            }} 
+                            className={classNames("h-16 px-5 bg-white text-[#0f1419] font-bold border border-white/10 rounded", {
+                                "!border-[color:var(--color-primary)]": backgroundColor.name == 'light'
+                            })}
+                        >
+                            Default
+                        </button>
+                        <button
+                            onClick={() => {
+                                setColor({
+                                    ... color,
+                                    base: '#f7f9f9',
+                                    baseSecondary: '#8b99a5'
+                                })
+                                setBackgroundColor({
+                                    name: 'dim',
+                                    primary: '#15202b',
+                                    secondary: '#1e2732',
+                                    third: '#263340',
+                                    modal: '#5b708366'
+                                })
+                                setBoxShadow('rgba(255, 255, 255, .2) 0px 0px 15px, rgba(255, 255, 255, .15) 0px 0px 3px 1px')
+                            }} 
+                            className={classNames("h-16 px-5 bg-[#15202b] text-[#f7f9f9] font-bold border border-white/10 rounded", {
+                                "!border-[color:var(--color-primary)]": backgroundColor.name == 'dim'
+                            })}
+                        >
+                            Dim
+                        </button>
+                        <button
+                            onClick={() => {
+                                setColor({
+                                    ... color,
+                                    base: '#e7e9ea',
+                                    baseSecondary: '#71767b'
+                                })
+                                setBackgroundColor({
+                                    name: 'dark',
+                                    primary: '#000',
+                                    secondary: '#16181c',
+                                    third: '#212327',
+                                    modal: '#5b708366'
+                                })
+                                setBoxShadow('rgba(255, 255, 255, .2) 0px 0px 15px, rgba(255, 255, 255, .15) 0px 0px 3px 1px')
+                            }} 
+                            className={classNames("h-16 px-5 bg-black text-[#f7f9f9] font-bold border border-white/10 rounded", {
+                                "!border-[color:var(--color-primary)]": backgroundColor.name == 'dark'
+                            })}
+                        >
+                            Lights out
+                        </button>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center">
+                    <Button onClick={close}>Done</Button>
                 </div>
             </div>
         </div>
