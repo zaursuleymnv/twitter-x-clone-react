@@ -37,13 +37,13 @@ export default function MoreAccount({close}) {
                 </button>
             ))}
             <div className="h-px bg-[#2f3336] my-3"></div>
-            <button className="w-full py-3 px-4 text-left text-[#e7e9ea] text-[15px] font-bold hover:bg-[#eff3f41a] transition-colors leading-[20px]">
+            <button className="w-full py-3 px-4 text-left text-[15px] font-bold hover:bg-[#eff3f41a] transition-colors leading-[20px]">
                 Add an existing account
             </button>
-            <button className="w-full py-3 px-4 text-left text-[#e7e9ea] text-[15px] font-bold hover:bg-[#eff3f41a] transition-colors leading-[20px]">
+            <button className="w-full py-3 px-4 text-left text-[15px] font-bold hover:bg-[#eff3f41a] transition-colors leading-[20px]">
                 Manage accounts
             </button>
-            <button className="w-full py-3 px-4 text-left text-[#e7e9ea] text-[15px] font-bold hover:bg-[#eff3f41a] transition-colors leading-[20px]">
+            <button className="w-full py-3 px-4 text-left text-[15px] font-bold hover:bg-[#eff3f41a] transition-colors leading-[20px]">
                 <div className="max-w-[228px]">
                     Log out @{currentAccount.username}
                 </div>

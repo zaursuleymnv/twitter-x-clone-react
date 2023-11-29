@@ -9,7 +9,7 @@ export default function UserCard({user}) {
         <button className="py-3 px-4 flex gap-3 hover:bg-white/[0.03] transition-colors">
                     <img src={user.avatar} className="w-10 h-10 rounded-full object-cover" alt="" />
                     <div className="flex flex-col flex-1 max-w-full text-left">
-                        <div className="text-[#e7e9ea] text-[15px] font-bold leading-5 flex items-center">
+                        <div className="text-[15px] font-bold leading-5 flex items-center">
                             {user.fullName}
                             {user?.verified && (
                                 <svg 

@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-    @apply bg-[color:var(--background-primary)] text-white text-[15px] antialiased;
+    @apply bg-[color:var(--background-primary)] text-[color:var(--color-base)] text-[15px] antialiased;
 }

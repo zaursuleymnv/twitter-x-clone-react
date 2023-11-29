@@ -29,10 +29,10 @@ export default function Topic({item}) {
                             d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
                     </svg>
                 </Popover.Button>
-                <Popover.Panel className="w-[384px] grid absolute top-2 right-0 bg-black rounded-xl shadow-box overflow-hidden z-[1]">
+                <Popover.Panel className="w-[384px] grid absolute top-2 right-0 bg-[color:var(--background-primary)] rounded-xl shadow-box overflow-hidden z-[1]">
                     <button
                         type="button"
-                        className="text-left py-3 px-4 text-[#eae9ea] hover:bg-white/[0.03] transition-colors flex items-center gap-3 font-bold text-[15px] leading-5"
+                        className="text-left py-3 px-4 hover:bg-white/[0.03] transition-colors flex items-center gap-3 font-bold text-[15px] leading-5"
                     >
                         <svg viewBox="0 0 24 24" width={18.75}>
                             <path
@@ -43,7 +43,7 @@ export default function Topic({item}) {
                     </button>
                     <button
                         type="button"
-                        className="text-left py-3 px-4 text-[#eae9ea] hover:bg-white/[0.03] transition-colors flex items-center gap-3 font-bold text-[15px] leading-5"
+                        className="text-left py-3 px-4 hover:bg-white/[0.03] transition-colors flex items-center gap-3 font-bold text-[15px] leading-5"
                     >
                         <svg viewBox="0 0 24 24" width={18.75}>
                             <path

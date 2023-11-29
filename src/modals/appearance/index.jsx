@@ -36,7 +36,7 @@ export default function AppearanceModal() {
                                     @X · 59m
                                 </div>
                             </header>
-                            <div className="text-[#e7e9ea] text-[15px] leading-5">
+                            <div className="text-[15px] leading-5">
                                 At the heart of X are short messages called posts — just like this one — which can include photos, videos, links, text, hashtags, and mentions like <Link to="/x" className="text-[#1d9bf0] hover:underline">@X</Link>
                             </div>
                         </div>
