@@ -50,8 +50,10 @@ export default function AppearanceModal({close}) {
                     </div>
                 </div>
                 <div>
+                    <h6 className="text-[color:var(--color-base-secondary)] text-[13px] font-bold leading-5 mb-1">Color</h6>
+
                     <h6 className="text-[color:var(--color-base-secondary)] text-[13px] font-bold leading-5 mb-1">Background</h6>
-                    <div className="py-1 px-3 mb-3 grid gap-1 grid-cols-3 bg-[color:var(--background-secondary)] rounded-2xl">
+                    <div className="py-2 px-4 mb-3 grid gap-2 grid-cols-3 bg-[color:var(--background-secondary)] rounded-2xl">
                         <button
                             onClick={() => {
                                 setColor({
@@ -68,10 +70,23 @@ export default function AppearanceModal({close}) {
                                 })
                                 setBoxShadow('rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px')
                             }} 
-                            className={classNames("h-16 px-5 bg-white text-[#0f1419] font-bold border border-white/10 rounded", {
-                                "!border-[color:var(--color-primary)]": backgroundColor.name == 'light'
+                            className={classNames("flex items-center gap-1.5 h-16 pr-3 pl-2 bg-white text-[#0f1419] font-bold border border-white/10 rounded group", {
+                                "!border-[color:var(--color-primary)] !border-2": backgroundColor.name == 'light'
                             })}
                         >
+                            <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-black/5 flex items-center justify-center">
+                                <div 
+                                    className={classNames("w-5 h-5 rounded-full border-2 border-[#b9cad3] flex items-center justify-center", {
+                                        "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white": backgroundColor.name == 'light'
+                                    })}
+                                >
+                                {backgroundColor.name == 'light' && (
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"/>
+                                    </svg>
+                                )}
+                                </div>
+                            </div>
                             Default
                         </button>
                         <button
@@ -90,10 +105,23 @@ export default function AppearanceModal({close}) {
                                 })
                                 setBoxShadow('rgba(255, 255, 255, .2) 0px 0px 15px, rgba(255, 255, 255, .15) 0px 0px 3px 1px')
                             }} 
-                            className={classNames("h-16 px-5 bg-[#15202b] text-[#f7f9f9] font-bold border border-white/10 rounded", {
-                                "!border-[color:var(--color-primary)]": backgroundColor.name == 'dim'
+                            className={classNames("flex items-center gap-1.5 h-16 pr-3 pl-2 bg-[#15202b] text-[#f7f9f9] font-bold border border-white/10 rounded group", {
+                                "!border-[color:var(--color-primary)] !border-2": backgroundColor.name == 'dim'
                             })}
                         >
+                            <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-white/5 flex items-center justify-center">
+                                <div 
+                                    className={classNames("w-5 h-5 rounded-full border-2 border-[#5c6e7e] flex items-center justify-center ", {
+                                        "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white": backgroundColor.name == 'dim'
+                                    })}
+                                >
+                                {backgroundColor.name == 'dim' && (
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"/>
+                                    </svg>
+                                )}
+                                </div>
+                            </div>
                             Dim
                         </button>
                         <button
@@ -112,10 +140,23 @@ export default function AppearanceModal({close}) {
                                 })
                                 setBoxShadow('rgba(255, 255, 255, .2) 0px 0px 15px, rgba(255, 255, 255, .15) 0px 0px 3px 1px')
                             }} 
-                            className={classNames("h-16 px-5 bg-black text-[#f7f9f9] font-bold border border-white/10 rounded", {
-                                "!border-[color:var(--color-primary)]": backgroundColor.name == 'dark'
+                            className={classNames("flex items-center gap-1.5 h-16 pr-3 pl-2 bg-black text-[#f7f9f9] font-bold border border-white/10 rounded group", {
+                                "!border-[color:var(--color-primary)] !border-2": backgroundColor.name == 'dark'
                             })}
                         >
+                            <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-white/5 flex items-center justify-center">
+                                <div 
+                                    className={classNames("w-5 h-5 rounded-full border-2 border-[#3e4144] flex items-center justify-center", {
+                                        "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white": backgroundColor.name == 'dark'
+                                    })}
+                                >
+                                {backgroundColor.name == 'dark' && (
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"/>
+                                    </svg>
+                                )}
+                                </div>
+                            </div>
                             Lights out
                         </button>
                     </div>
