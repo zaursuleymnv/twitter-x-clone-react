@@ -20,7 +20,7 @@ export default function Menu() {
                     })}>
                     <div className="w-[26.25] h-[26.25] relative">
                         {menu?.notification && (
-                            <span className="absolute -top-1.5 -right-1 bg-[color:var(--color-primary)] text-[color:var(--background-primary)] border border-[color:var(--background-primary)] w-[18px] h-[18px] rounded-full flex justify-center items-center text-[11px]">{menu?.notification}</span>
+                            <span className="absolute -top-1.5 -right-1 bg-[color:var(--color-primary)] text-white border border-[color:var(--background-primary)] w-[18px] h-[18px] rounded-full flex justify-center items-center text-[11px]">{menu?.notification}</span>
                         )}
                         {!isActive && menu.icon.passive}
                         {isActive && menu.icon.active}

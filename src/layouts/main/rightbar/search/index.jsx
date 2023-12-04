@@ -16,7 +16,7 @@ export default function Search() {
         <div
             ref={ref} 
             className="h-[53px] min-h-[32px] mb-3 flex items-center sticky top-0 bg-[color:var(--background-primary)] z-10">
-            <label className="w-full h-[43px] relative rounded-full bg-[color:var(--background-third)] border border-transparent group focus-within:bg-[color:var(--background-primary)] focus-within:border-[#1d9bf0]">
+            <label className="w-full h-[43px] relative rounded-full bg-[color:var(--background-third)] border border-transparent group focus-within:bg-[color:var(--background-primary)] focus-within:border-[color:var(--color-primary)]">
             <div className="w-[56px] h-full absolute top-0 left-0 flex items-center justify-center pointer-events-none">
                 <svg 
                     viewBox="0 0 24 24" 

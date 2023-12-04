@@ -25,19 +25,19 @@ export default function Footer() {
 
                     </Popover.Button>
                     <Popover.Panel className='absolute bottom-0 right-0 w-[150px] max-w-[384px] grid bg-[color:var(--background-primary)] shadow-box rounded-xl overflow-hidden'>
-                        <Link to='/' className="py-3 px-4 text-white text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
+                        <Link to='/' className="py-3 px-4 text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
                             About
                         </Link>
-                        <Link to='/' className="py-3 px-4 text-white text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
+                        <Link to='/' className="py-3 px-4 text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
                             Download the X app
                         </Link>
-                        <Link to='/' className="py-3 px-4 text-white text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
+                        <Link to='/' className="py-3 px-4 text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
                             Status
                         </Link>
-                        <Link to='/' className="py-3 px-4 text-white text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
+                        <Link to='/' className="py-3 px-4 text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
                             X for Business
                         </Link>
-                        <Link to='/' className="py-3 px-4 text-white text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
+                        <Link to='/' className="py-3 px-4 text-[15px] font-bold leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
                             Developers
                         </Link>
                     </Popover.Panel>

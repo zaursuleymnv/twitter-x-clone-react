@@ -1,21 +1,29 @@
 import classNames from "classnames";
+import { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "~/components/button";
-import { setBackgroundColor, setBoxShadow, setColor } from "~/store/appearance/actions";
+import { setBackgroundColor, setBoxShadow, setColor, setFontSize } from "~/store/appearance/actions";
 import { useAppearance } from "~/store/appearance/hooks";
-import { colors } from "~/utils/consts";
+import { colors, fontSizes } from "~/utils/consts";
 
 export default function AppearanceModal({close}) {
 
-    const {backgroundColor, color} = useAppearance()
+    const {backgroundColor, color, fontSize} = useAppearance()
+
+    const [fontSizePercent, setFontSizePercent] = useState(0)
+
+    useEffect(() => {
+        setTimeout(() => setFontSizePercent(document.querySelector('.active-font-size').offsetLeft + 3), 1)
+    }, [fontSize])
 
     return (
         <div className="w-[600px]">
-            <h3 className="mt-8 mb-3 text-[23px] font-extrabold leading-7 text-center">
+            <h3 className="mt-8 mb-3 text-[1.438rem] font-extrabold leading-7 text-center">
                 Customize your view
             </h3>
             <div className="p-8 pt-0">
-                <p className="text-center text-[15px] text-[color:var(--color-base-secondary)] mb-5 leading-5">
+                <p className="text-center text-[0.938rem] text-[color:var(--color-base-secondary)] mb-5 leading-5">
                     These settings affect all the X accounts on this browser.
                 </p>
                 <div className="mx-8 mb-4">
@@ -44,7 +52,7 @@ export default function AppearanceModal({close}) {
                                     @X · 59m
                                 </div>
                             </header>
-                            <div className="text-[color:var(--color-base)] text-[15px] leading-5">
+                            <div className="text-[color:var(--color-base)] leading-5">
                                 At the heart of X are short messages called posts — just like this one — which can include photos, videos, links, text, hashtags, and mentions like <Link to="/x" className="text-[#1d9bf0] hover:underline">@X</Link>
                             </div>
                         </div>
@@ -52,6 +60,33 @@ export default function AppearanceModal({close}) {
                 </div>
                 <div>
                     <div className="grid gap-3">
+                    <section>
+                            <h6 className="text-[color:var(--color-base-secondary)] text-[13px] font-bold leading-5 mb-1">Font size</h6>
+                            <div className="bg-[color:var(--background-secondary)] p-4 rounded-2xl flex items-center gap-5">
+                                <div className="text-[0.813rem]">Aa</div>
+                                <div className="h-1 bg-[color:var(--color-secondary)] flex-1 rounded-full relative">
+                                    <div style={{width: fontSizePercent}} className="absolute top-0 left-0 bg-[color:var(--color-primary)] h-full rounded-full"/>
+                                    <div className="absolute -top-3.5 -left-[8px] flex justify-between w-[calc(100%+16px)]">
+                                        {fontSizes.map(fs => (
+                                            <button
+                                                type="button"
+                                                onClick={() => setFontSize(fs)}
+                                                className={classNames("relative before:absolute before:inset-0 before:rounded-full before:hover:bg-[color:var(--color-primary)] before:opacity-10 w-8 h-8 rounded-full flex items-center justify-center", {
+                                                    "active-font-size": fs === fontSize
+                                                })}
+                                            >
+                                                <div className={classNames("w-3 h-3 rounded-full bg-[color:var(--color-secondary)]", {
+                                                    "w-4 h-4": fs === fontSize,
+                                                    "!bg-[color:var(--color-primary)]": fs <= fontSize
+                                                })} />
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="text-[1.25rem]">Aa</div>
+                            </div>
+                    </section>
+
                         <section>
                             <h6 className="text-[color:var(--color-base-secondary)] text-[13px] font-bold leading-5 mb-1">Color</h6>
                             <div className="bg-[color:var(--background-secondary)] py-2 rounded-2xl flex items-center justify-around">
@@ -60,13 +95,13 @@ export default function AppearanceModal({close}) {
                                         onClick={() => {
                                             setColor({
                                                 ...color,
-                                                primary: c,
+                                                ...c,
                                             })
                                         }}
-                                        style={{'--bg':c}} 
-                                        className="w-10 h-10 rounded-full bg-[color:var(--bg)] flex items-center justify-center text-white"
+                                        style={{'--bg':c.primary}} 
+                                        className="w-[40px] h-[40px] rounded-full bg-[color:var(--bg)] flex items-center justify-center text-white"
                                     >
-                                        {color.primary === c && (
+                                        {color.primary === c.primary && (
                                             <svg viewBox="0 0 24 24" width={25}>
                                                 <path fill="currentColor" d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"/>
                                             </svg>
@@ -96,13 +131,13 @@ export default function AppearanceModal({close}) {
                                         })
                                         setBoxShadow('rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px')
                                     }} 
-                                    className={classNames("flex items-center gap-1.5 h-16 pr-3 pl-2 bg-white text-[#0f1419] font-bold border border-white/10 rounded group", {
+                                    className={classNames("flex items-center gap-1.5 h-[62px] pr-3 pl-2 bg-white text-[#0f1419] font-bold border border-white/10 rounded group", {
                                         "!border-[color:var(--color-primary)] !border-2": backgroundColor.name == 'light'
                                     })}
                                 >
-                                    <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-black/5 flex items-center justify-center">
+                                    <div className="w-[40px] h-[40px] rounded-full flex-shrink-0 group-hover:bg-black/5 flex items-center justify-center">
                                         <div 
-                                            className={classNames("w-5 h-5 rounded-full border-2 border-[#b9cad3] flex items-center justify-center", {
+                                            className={classNames("w-[20px] h-[20px] rounded-full border-[2px] border-[#b9cad3] flex items-center justify-center", {
                                                 "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white": backgroundColor.name == 'light'
                                             })}
                                         >
@@ -113,7 +148,9 @@ export default function AppearanceModal({close}) {
                                         )}
                                         </div>
                                     </div>
-                                    Default
+                                    <div className="truncate">
+                                        Default
+                                    </div>
                                 </button>
                                 <button
                                     onClick={() => {
@@ -131,13 +168,13 @@ export default function AppearanceModal({close}) {
                                         })
                                         setBoxShadow('rgba(255, 255, 255, .2) 0px 0px 15px, rgba(255, 255, 255, .15) 0px 0px 3px 1px')
                                     }} 
-                                    className={classNames("flex items-center gap-1.5 h-16 pr-3 pl-2 bg-[#15202b] text-[#f7f9f9] font-bold border border-white/10 rounded group", {
+                                    className={classNames("flex items-center gap-1.5 h-[62px] pr-3 pl-2 bg-[#15202b] text-[#f7f9f9] font-bold border border-white/10 rounded group", {
                                         "!border-[color:var(--color-primary)] !border-2": backgroundColor.name == 'dim'
                                     })}
                                 >
-                                    <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-white/5 flex items-center justify-center">
+                                    <div className="w-[40px] h-[40px] rounded-full flex-shrink-0 group-hover:bg-white/5 flex items-center justify-center">
                                         <div 
-                                            className={classNames("w-5 h-5 rounded-full border-2 border-[#5c6e7e] flex items-center justify-center ", {
+                                            className={classNames("w-[20px] h-[20px] rounded-full border-[2px] border-[#5c6e7e] flex items-center justify-center ", {
                                                 "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white": backgroundColor.name == 'dim'
                                             })}
                                         >
@@ -148,7 +185,9 @@ export default function AppearanceModal({close}) {
                                         )}
                                         </div>
                                     </div>
-                                    Dim
+                                    <div className="truncate">
+                                        Dim
+                                    </div>
                                 </button>
                                 <button
                                     onClick={() => {
@@ -166,13 +205,13 @@ export default function AppearanceModal({close}) {
                                         })
                                         setBoxShadow('rgba(255, 255, 255, .2) 0px 0px 15px, rgba(255, 255, 255, .15) 0px 0px 3px 1px')
                                     }} 
-                                    className={classNames("flex items-center gap-1.5 h-16 pr-3 pl-2 bg-black text-[#f7f9f9] font-bold border border-white/10 rounded group", {
+                                    className={classNames("flex items-center gap-1.5 h-[62px] pr-3 pl-2 bg-black text-[#f7f9f9] font-bold border border-white/10 rounded group", {
                                         "!border-[color:var(--color-primary)] !border-2": backgroundColor.name == 'dark'
                                     })}
                                 >
-                                    <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-white/5 flex items-center justify-center">
+                                    <div className="w-[40px] h-[40px] rounded-full flex-shrink-0 group-hover:bg-white/5 flex items-center justify-center">
                                         <div 
-                                            className={classNames("w-5 h-5 rounded-full border-2 border-[#3e4144] flex items-center justify-center", {
+                                            className={classNames("w-[20px] h-[20px] rounded-full border-[2px] border-[#3e4144] flex items-center justify-center", {
                                                 "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white": backgroundColor.name == 'dark'
                                             })}
                                         >
@@ -183,13 +222,15 @@ export default function AppearanceModal({close}) {
                                         )}
                                         </div>
                                     </div>
-                                    Lights out
+                                    <div className="truncate">
+                                        Lights out
+                                    </div>
                                 </button>
                             </div>
                         </section>
                     </div>
                 </div>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center pt-4">
                     <Button onClick={close}>Done</Button>
                 </div>
             </div>

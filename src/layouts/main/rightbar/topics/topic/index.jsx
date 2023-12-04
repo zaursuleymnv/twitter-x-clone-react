@@ -6,7 +6,7 @@ export default function Topic({item}) {
     return (
         <Link
             to='/'
-            className="relative py-3 px-4 hover:bg-white/[0.03] transition-colors"
+            className="relative py-3 px-4 hover:bg-[color:var(--background-third)] transition-colors"
         >
             <div className="text-[13px] text-[color:var(--color-base-secondary)]">
                 {item.title}
@@ -21,7 +21,7 @@ export default function Topic({item}) {
             )}
             <Popover className='absolute top-1.5 right-2'>
                 <Popover.Button
-                    className="outline-none w-[34.75px] h-[34.75px] text-[color:var(--color-base-secondary)] rounded-full flex items-center justify-center hover:bg-[#1d9bf01a] hover:text-[#1d9bf0] transition-colors"
+                    className="outline-none w-[34.75px] h-[34.75px] rounded-full text-[color:var(--color-base-secondary)] flex items-center justify-center hover:text-[color:var(--color-primary)] transition-colors relative before:absolute before:inset-0 before:rounded-full hover:before:hover:bg-[color:var(--color-primary)] before:transition-all before:z-[-1] before:opacity-[.15] z-[1]"
                 >
                     <svg viewBox="0 0 24 24" width={18.75}>
                         <path
@@ -29,10 +29,10 @@ export default function Topic({item}) {
                             d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
                     </svg>
                 </Popover.Button>
-                <Popover.Panel className="w-[384px] grid absolute top-2 right-0 bg-[color:var(--background-primary)] rounded-xl shadow-box overflow-hidden z-[1]">
+                <Popover.Panel className="w-[384px] grid absolute top-2 right-0 bg-[color:var(--background-primary)] rounded-xl shadow-box overflow-hidden z-[2]">
                     <button
                         type="button"
-                        className="text-left py-3 px-4 hover:bg-white/[0.03] transition-colors flex items-center gap-3 font-bold text-[15px] leading-5"
+                        className="text-left py-3 px-4 hover:bg-[color:var(--background-secondary)] transition-colors flex items-center gap-3 font-bold text-[15px] leading-5"
                     >
                         <svg viewBox="0 0 24 24" width={18.75}>
                             <path
@@ -43,7 +43,7 @@ export default function Topic({item}) {
                     </button>
                     <button
                         type="button"
-                        className="text-left py-3 px-4 hover:bg-white/[0.03] transition-colors flex items-center gap-3 font-bold text-[15px] leading-5"
+                        className="text-left py-3 px-4 hover:bg-[color:var(--background-secondary)] transition-colors flex items-center gap-3 font-bold text-[15px] leading-5"
                     >
                         <svg viewBox="0 0 24 24" width={18.75}>
                             <path
