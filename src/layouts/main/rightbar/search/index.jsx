@@ -15,13 +15,12 @@ export default function Search() {
     return (
         <div
             ref={ref} 
-            className="h-[53px] min-h-[32px] mb-3 flex items-center sticky top-0 bg-[color:var(--background-primary)] z-10">
-            <label className="w-full h-[43px] relative rounded-full bg-[color:var(--background-third)] border border-transparent group focus-within:bg-[color:var(--background-primary)] focus-within:border-[color:var(--color-primary)]">
-            <div className="w-[56px] h-full absolute top-0 left-0 flex items-center justify-center pointer-events-none">
+            className="min-h-[32px] h-[53px] mb-3 flex items-center sticky top-0 bg-[color:var(--background-primary)] z-10">
+            <label className="w-full h-[2.688rem] relative rounded-full bg-[color:var(--background-third)] border border-transparent group focus-within:bg-[color:var(--background-primary)] focus-within:border-[color:var(--color-primary)]">
+            <div className="w-[3.5rem] h-full absolute top-0 left-0 flex items-center justify-center pointer-events-none">
                 <svg 
-                    viewBox="0 0 24 24" 
-                    height={18.75} 
-                    className="min-w-[32px] text-[color:var(--color-base-secondary)] group-focus-within:text-[color:var(--color-primary)]"
+                    viewBox="0 0 24 24"  
+                    className="h-[1.172rem] min-w-[2rem] text-[color:var(--color-base-secondary)] group-focus-within:text-[color:var(--color-primary)]"
 
                     >
                     <path
@@ -31,7 +30,7 @@ export default function Search() {
             </div>
             <input
                 type="text" 
-                className="w-full h-full pl-[56px] text-[15px] outline-none bg-transparent"
+                className="w-full h-full pl-[3.5rem] outline-none bg-transparent"
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 onFocus={() => setFocus(true)}

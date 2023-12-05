@@ -13,7 +13,7 @@ export default function SidebarSection({title, children, more}) {
             {more && (
                 <Link
                     to={more}
-                    className="h-[52px] flex items-center px-4 text-[15px] rounded-b-2xl text-[color:var(--color-primary)] hover:bg-[color:var(--background-third)] transition-colors"
+                    className="h-[3.25rem] flex items-center px-4 rounded-b-2xl text-[color:var(--color-primary)] hover:bg-[color:var(--background-third)] transition-colors"
                 >
                     Show more
                 </Link>

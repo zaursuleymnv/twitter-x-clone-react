@@ -12,9 +12,9 @@ export default function Account() {
             <Popover.Button 
             className="w-full flex my-3 p-3 rounded-full hover:bg-[color:var(--background-third)] transition-colors text-left items-center outline-none"
             >
-            <img src={account.avatar} className="w-10 h-10 rounded-full" alt="" />
-            <div className="mx-3 text-[15px]">
-                <h6 className="font-bold leading-[20px]">{account.fullname}</h6>
+            <img src={account.avatar} className="w-10 h-10 rounded-full flex-shrink-0" alt="" />
+            <div className="mx-3">
+                <h6 className="font-bold leading-[1.25rem]">{account.fullname}</h6>
                 <div className="text-[color:var(--color-base-secondary)]">
                     @{account.username}
                 </div>
