@@ -18,9 +18,9 @@ export default function Menu() {
                     <div className={classNames("inline-flex items-center p-3 rounded-full gap-5 group-hover:bg-[color:var(--background-third)] transition-colors", {
                         "font-bold": isActive
                     })}>
-                    <div className="w-[26.25] h-[26.25] relative">
+                    <div className="w-[1.641rem] h-[1.641rem] relative">
                         {menu?.notification && (
-                            <span className="absolute -top-1.5 -right-1 bg-[color:var(--color-primary)] text-white border border-[color:var(--background-primary)] w-[18px] h-[18px] rounded-full flex justify-center items-center text-[11px]">{menu?.notification}</span>
+                            <span className="absolute -top-1.5 -right-1 bg-[color:var(--color-primary)] text-white border border-[color:var(--background-primary)] w-[1.125rem] h-[1.125rem] rounded-full flex justify-center items-center text-[0.688rem]">{menu?.notification}</span>
                         )}
                         {!isActive && menu.icon.passive}
                         {isActive && menu.icon.active}
