@@ -1,5 +1,6 @@
 import StickyHeader from "~/components/sticky-header";
 import Tab from "~/components/tab";
+import ForYou from "./for-you";
 
 export default function Home() {
     return(
@@ -16,7 +17,7 @@ export default function Home() {
                 </Tab.Items>
             </StickyHeader>
                 <Tab.Content id="for-you">
-                    1 content
+                    <ForYou/>
                 </Tab.Content>
                 <Tab.Content id="following">
                     2 content
