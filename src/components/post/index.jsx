@@ -1,4 +1,5 @@
 import { numberFormat } from "~/utils/formats";
+import Photo from "./photo";
 
 export default function Post({post}) {
     return (
@@ -27,6 +28,7 @@ export default function Post({post}) {
                         __html:post.content.replace(/\n/g, '<br>')
                     }}
                 />
+                {post.type === 'photo' && <Photo photos={post.photos}/>}
                 <div className="flex -ml-1.5 mt-2">
                     <div className="flex items-center flex-1 group gap-px">
                         <div className="w-[2.172rem] h-[2.172rem] rounded-full flex items-center justify-center transition-colors text-[color:var(--color-base-secondary)] group-hover:bg-[#1d9bf01a] group-hover:text-[#1d9bf0]">

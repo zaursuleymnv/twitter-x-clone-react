@@ -39,14 +39,14 @@ export const posts = [
 	{
 		id: '1708632465282150796',
 		type: 'photo',
-		content: `Toplu günaydın, ben her sabah spora devam ama her gün post atmıyorum artık, max 4 günde bir atarım çünkü en fazla 4 foto paylaşılıyormuş 🤣`,
+		content: `I am posting this picture of myself to build my Twitter X clone by using React + Vite 😂`,
 		photos: [
-			'https://pbs.twimg.com/media/F7VBIvaW0AIZyiX?format=jpg&name=large'
+			'https://pbs.twimg.com/media/GBJYUHrXkAIOrZf?format=jpg&name=small'
 		],
 		account: {
 			avatar: 'https://pbs.twimg.com/profile_images/1671457838969896961/z1loOE8W_bigger.jpg',
-			username: 'tayfunerbilen',
-			fullName: 'Tayfun Erbilen'
+			username: 'zaur_suleymnv',
+			fullName: '	Zaur Suleymanov'
 		},
 		stats: {
 			comments: 43535,
@@ -58,10 +58,10 @@ export const posts = [
 	{
 		id: '1708632465282150796',
 		type: 'photo',
-		content: `Imagination Land!`,
+		content: `Do not deprive yourself of smiling 🙃`,
 		photos: [
-			'https://pbs.twimg.com/media/F7ZIK8KWgAAP8pH?format=jpg&name=900x900',
-			'https://pbs.twimg.com/media/F7VBIvZXEAAIpEM?format=jpg&name=large'
+			'https://pbs.twimg.com/media/GBJjKFQWQAAp3Dy?format=jpg&name=small',
+			'https://pbs.twimg.com/media/GBJjNOmWkAA3NLb?format=jpg&name=small'
 		],
 		account: {
 			avatar: 'https://pbs.twimg.com/profile_images/1683325380441128960/yRsRRjGO_400x400.jpg',
@@ -103,9 +103,9 @@ And people have been busy executing god-like tasks.
 		type: 'photo',
 		content: `İstanbul'da Cumhuriyet'in 100. yılına özel, 100 gün boyunca Yerebatan Sarnıcı, Şerefiye Sarnıcı, Miniatürk ve Panorama 1453 Tarih Müzesi ücretsiz ziyaret edilebilecek.`,
 		photos: [
-			'https://pbs.twimg.com/media/F7bpqaKXkAAopDd?format=jpg&name=900x900',
-			'https://pbs.twimg.com/media/F7bptMoXYAA7TpB?format=jpg&name=900x900',
-			'https://pbs.twimg.com/media/F8tfk2JWwAAlY3f?format=jpg&name=large'
+			'https://pbs.twimg.com/media/GBJk_U1XsAAV28S?format=jpg&name=small',
+			'https://pbs.twimg.com/media/GBJlQKDXYAA2aEJ?format=jpg&name=small',
+			'https://pbs.twimg.com/media/GBJlT4xW4AA3jsv?format=jpg&name=small'
 		],
 		account: {
 			avatar: 'https://pbs.twimg.com/profile_images/1671457838969896961/z1loOE8W_bigger.jpg',
@@ -130,10 +130,10 @@ This prompt is going viral- mimicking a creepy iPhone capture that looks insanel
 
 Prompt in ALT tag + more examples in thread:`,
 		photos: [
-			'https://pbs.twimg.com/media/F7aKxHhaAAAnHlS?format=jpg&name=large',
-			'https://pbs.twimg.com/media/F7VBIvaW0AAyXEr?format=jpg&name=large',
-			'https://pbs.twimg.com/media/F7VBIvaWAAAWUsx?format=jpg&name=large',
-			'https://pbs.twimg.com/media/F7VBIvaWAAAWUsx?format=jpg&name=large',
+			'https://pbs.twimg.com/media/GBJtBj8W8AATSbx?format=jpg&name=small',
+			'https://pbs.twimg.com/media/GBJtOo3XoAAxnIh?format=jpg&name=small',
+			'https://pbs.twimg.com/media/GBJtERiWwAArdSJ?format=jpg&name=small',
+			'https://pbs.twimg.com/media/GBJs-gHWcAAIfIO?format=jpg&name=small',
 		],
 		account: {
 			avatar: 'https://pbs.twimg.com/profile_images/1671457838969896961/z1loOE8W_bigger.jpg',
