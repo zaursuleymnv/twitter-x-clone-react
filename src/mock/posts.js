@@ -2,32 +2,33 @@ export const posts = [
 	{
 		id: '1708632465282150796',
 		type: 'poll',
-		content: `Możesz zamienić się na jeden dzień ciałami z jedną postacią. Kogo wybierasz i co robisz?`,
+		content: `Czy lubisz serial Walking Dead?`,
 		poll: {
 			voted: false,
-			votes: 12,
+			votes: 397,
 			answers: [
 				{
 					id: 1,
-					text: 'Evet',
-					votes: 8
+					text: 'Tak',
+					votes: 297
 				},
 				{
 					id: 2,
-					text: 'Hayır',
-					votes: 1
+					text: 'Nie',
+					votes: 33
 				},
 				{
 					id: 3,
-					text: 'Yaaani',
-					votes: 3
+					text: 'Może',
+					votes: 67
 				}
 			]
 		},
 		account: {
 			avatar: 'https://pbs.twimg.com/profile_images/1671457838969896961/z1loOE8W_bigger.jpg',
-			username: 'prototurkcom',
-			fullName: './prototurk'
+			username: 'NetflixPL',
+			fullName: 'Netflix Polska',
+			verified: true
 		},
 		stats: {
 			comments: 43535,
